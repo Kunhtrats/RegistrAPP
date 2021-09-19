@@ -14,28 +14,8 @@ export class PersonasService {
     {
       user    : 'he.vergara',
       password: '2008'
-    },
-    {
-      user    : 'ka.alarcon',
-      password: '2000'
     }
   ]
-
-
   constructor() { }
 
-// CRUD
-  getPersonas()
-  { // devuelve todos las personas de la lista
-    return this.personas
-  }
-  addPersona(user: string, password: string)
-  { // agrega a una nueva persona
-    this.personas.push(
-      {
-        user    : user,
-        password: password
-      }
-    )
-  }
 }

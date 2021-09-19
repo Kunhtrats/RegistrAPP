@@ -18,6 +18,14 @@ const routes: Routes = [
     path: 'lobby',
     loadChildren: () => import('./lobby/lobby.module').then( m => m.LobbyPageModule)
   },
+  {
+    path: 'lobby-settings',
+    loadChildren: () => import('./lobby-settings/lobby-settings.module').then( m => m.LobbySettingsPageModule)
+  },
+  {
+    path: 'qr-page',
+    loadChildren: () => import('./qr-page/qr-page.module').then( m => m.QrPagePageModule)
+  },
 ];
 
 @NgModule({

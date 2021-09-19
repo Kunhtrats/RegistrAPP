@@ -22,4 +22,5 @@ export class IngresarPage implements OnInit {
   recover() {
     this.router.navigate(['/recover-pass']);
   }
+  
 }
