@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+<br><br>
+<ion-content>
+  <ion-row class="ion-align-items-center">
+    <ion-col class="ion-align-self-center">
+      <div>
+    <ion-text color="primary" class="ion-text-center">
+      <h1>Datos de usuario</h1>
+    </ion-text>
+    <br><br>
+    <ion-item lines="full">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <br><br>
+    <br>
+    <ion-col>
+
+      <ion-button (click)="ingresar()" type="submit" color="danger" expand="block">Ingresar</ion-button>
+
+      <ion-button (click)="recover()" type="submit" color="warning" expand="block">Recuperar contraseña</ion-button>
+    </ion-col>
+    </div>
+  </ion-col>
+  </ion-row>
+
+  </ion-content>
