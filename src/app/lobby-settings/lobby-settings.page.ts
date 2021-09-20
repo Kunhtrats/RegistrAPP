@@ -25,7 +25,6 @@ export class LobbySettingsPage implements OnInit {
   }
   home()
   {
-    this.personasService.deleteUser;
     this.router.navigate(['/home']);
 }
 }

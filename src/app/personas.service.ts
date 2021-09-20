@@ -13,19 +13,21 @@ export class PersonasService {
 
   loginUser(user: string, password: string)
   {
-    this.personas.push(
+    this.personas.push
+    (
       {
         user     : user,
         password : password,
       }
     )
   }
+  getUsuarios(user)
+  { 
+    return this.personas.find(x=> {return x.user == user})
+  }
+
   getUsers()
   {
     return this.personas
-  }
-
-  deleteUser(i, user) {
-    this.personas.splice(i, user);
   }
 }

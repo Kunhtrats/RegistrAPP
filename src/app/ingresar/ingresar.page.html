@@ -3,37 +3,37 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    
   </ion-toolbar>
 </ion-header>
+
 <br><br>
+
 <ion-content>
-  <ion-row class="ion-align-items-center">
-    <ion-col class="ion-align-self-center">
-      <div>
-    <ion-text color="primary" class="ion-text-center">
-      <h1>Datos de usuario</h1>
-    </ion-text>
-    <br><br>
-    <ion-item lines="full">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" class="form-control" id="username" required #user></ion-input>
-    </ion-item>
+  <form action="">
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-align-self-center">
+        <div>
+          <ion-text color="primary" class="ion-text-center">
+            <h1>Datos de usuario</h1>
+          </ion-text>
+          <br><br>
+          <ion-item lines="full" class="roundedInput">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" class="form-control" id="username" required #user></ion-input>
+          </ion-item>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" id="password" required #password></ion-input>
-    </ion-item>
-    <br><br>
-    <br>
-    <ion-col>
-
-      <ion-button (click)="ingresar(user, password)" type="submit" color="danger" expand="block" >Ingresar</ion-button>
-
-      <ion-button (click)="recover()" type="submit" color="warning" expand="block">Recuperar contraseña</ion-button>
-    </ion-col>
-    </div>
-  </ion-col>
-  </ion-row>
-
+          <ion-item lines="full" class="roundedInput">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" class="form-control" id="password" required #password></ion-input>
+          </ion-item>
+          <br><br>
+          <br>
+          <ion-col>
+            <ion-button (click)="ingresar(user, password)" type="submit" color="danger" expand="block" >Ingresar</ion-button>
+            <ion-button (click)="recover()" type="submit" color="warning" expand="block">Recuperar contraseña</ion-button>
+          </ion-col>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
   </ion-content>

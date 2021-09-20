@@ -3,15 +3,21 @@ import { PersonasService } from '../personas.service';
 import { Router } from '@angular/router';
 
 @Component({
+  
   selector: 'app-ingresar',
   templateUrl: './ingresar.page.html',
   styleUrls: ['./ingresar.page.scss'],
 })
 export class IngresarPage implements OnInit {
 
-  constructor(private personasService : PersonasService,
-              private router : Router        
-    ) { }
+  constructor
+  (
+    private personasService : PersonasService,
+    private router          : Router, 
+
+  ) 
+  { 
+  }
 
   ngOnInit() 
   {
@@ -21,12 +27,13 @@ export class IngresarPage implements OnInit {
     const use = user.value;
     const pass = password.value;
     this.personasService.loginUser(use, pass);
-    this.router.navigate(['/lobby']);
+    this.router.navigate(['/lobby'])
+    
+
   }
   recover() 
   {
     this.router.navigate(['/recover-pass']);
   }
-  
-  
 }
+
