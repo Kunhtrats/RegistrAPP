@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonasService } from '../personas.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./lobby.page.scss'],
 })
 export class LobbyPage implements OnInit {
+  personas: import("d:/Tools/Archivos Personales/Visual Studio Code/PGY4121/src/app/persona.model").Persona[];
 
-  constructor(private router: Router) { }
+  constructor(private personasServicio: PersonasService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.personas = this.personasServicio.getUsers();
+  }
+  ionViewWillEnter() 
+  {
+    this.personas = this.personasServicio.getUsers();
   }
   settings()
   {
@@ -20,7 +28,7 @@ export class LobbyPage implements OnInit {
   {
     this.router.navigate(['/qr-page']);  
   }
-
+  noOfItem = 1
   
   
 }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Persona } from '../persona.model';
+import {PersonasService} from '../personas.service';
+import { AlertController } from '@ionic/angular';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-lobby-settings',
@@ -8,12 +12,20 @@ import { Router } from '@angular/router';
 })
 export class LobbySettingsPage implements OnInit {
 
-  constructor(private router: Router) { }
+  persona : Persona
 
-  ngOnInit() {
+  constructor(
+    private activatedRouter : ActivatedRoute,
+    private personasService : PersonasService,
+    private router          : Router,
+    private alertController : AlertController) { }
+
+  ngOnInit() 
+  {    
   }
   home()
   {
+    this.personasService.deleteUser;
     this.router.navigate(['/home']);
 }
 }

@@ -2,10 +2,16 @@
   <ion-toolbar>
     <ion-title class="ion-text-center">RegistrAPP</ion-title>
   </ion-toolbar>
+    
 </ion-header>
 
 <ion-content>
-  <ion-label>{{user}}</ion-label>
+  <br><br>
+    <div *ngFor="let persona of (personas | slice:personas.length - 3)" [routerLink]="['/', persona.user]">
+
+      <ion-title class="ion-text-center">Bienvenido {{persona.user}}</ion-title>
+
+    </div>
 </ion-content>
 
 <ion-tabs>

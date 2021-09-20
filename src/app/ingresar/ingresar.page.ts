@@ -13,14 +13,20 @@ export class IngresarPage implements OnInit {
               private router : Router        
     ) { }
 
-  ngOnInit() {
-  }
-  ingresar()
+  ngOnInit() 
   {
+  }
+  ingresar(user :HTMLInputElement, password :HTMLInputElement)
+  {
+    const use = user.value;
+    const pass = password.value;
+    this.personasService.loginUser(use, pass);
     this.router.navigate(['/lobby']);
   }
-  recover() {
+  recover() 
+  {
     this.router.navigate(['/recover-pass']);
   }
+  
   
 }
