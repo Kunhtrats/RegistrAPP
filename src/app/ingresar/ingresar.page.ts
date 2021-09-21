@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonasService } from '../personas.service';
 import { Router } from '@angular/router';
 import { Persona } from '../persona.model';
+import {AlertController} from '@ionic/angular';
 
 
 @Component({
@@ -10,10 +11,12 @@ import { Persona } from '../persona.model';
   templateUrl: './ingresar.page.html',
   styleUrls: ['./ingresar.page.scss'],
 })
-export class IngresarPage implements OnInit {
+export class IngresarPage implements OnInit 
+{
   persona : Persona
   constructor
   (
+    private alertController: AlertController,
     private personasService : PersonasService,
     private router          : Router, 
   ) 
@@ -24,21 +27,43 @@ export class IngresarPage implements OnInit {
   {
   }
 
-  datauser: string = "";
-  datapass: string = "";
+  public datauser: string = "";
+  public datapass: string = "";
 
-  ingresar()
+  async ingresar()
   {
     if (this.datauser === "mi.alarconr" && this.datapass == "1234") 
+    {
+      this.router.navigate(['/lobby']);
+      const alert = await this.alertController.create({
+        header: 'Bienvenido usuario',
+        message: this.datauser,
+        buttons: ['Aceptar']
+      });
+      await alert.present();
+      
+    }
+    else if (this.datauser === "va.muñoz" && this.datapass == "123")
+    {
+      this.router.navigate(['/lobby']);
+      const alert = await this.alertController.create({
+        header: 'Bienvenido usuario',
+        message: this.datauser,
+        buttons: ['Aceptar']
+      });
+      await alert.present();
+    }
+    else 
       {
-        this.router.navigate(['/lobby']);
-      } 
-      else 
-      {
-        this.router.navigate(['/home']);
+        const alert = await this.alertController.create({
+          header: 'Credenciales incorrectas',
+          message: 'Los datos ingresados son incorrectos',
+          buttons: ['Aceptar']
+        });
+        await alert.present();
+        this.router.navigate(['/ingresar']);
       }
-  }
-  
+    }
 
   recover() 
   {

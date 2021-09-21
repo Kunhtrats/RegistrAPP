@@ -7,9 +7,6 @@
 
 <ion-content>
   <br><br>
-    <div *ngFor="let persona of (personas | slice:personas.length - 1)" [routerLink]="['/', persona.user]">
-      <ion-title class="welcome">Bienvenido {{persona.user}}</ion-title>
-    </div>
 </ion-content>
 
 <ion-tabs>
