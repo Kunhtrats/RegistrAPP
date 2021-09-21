@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonasService } from '../personas.service';
 import { Router } from '@angular/router';
+import { Persona } from '../persona.model';
+
 
 @Component({
   
@@ -9,12 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./ingresar.page.scss'],
 })
 export class IngresarPage implements OnInit {
-
+  persona : Persona
   constructor
   (
     private personasService : PersonasService,
     private router          : Router, 
-
   ) 
   { 
   }
@@ -22,15 +23,23 @@ export class IngresarPage implements OnInit {
   ngOnInit() 
   {
   }
-  ingresar(user :HTMLInputElement, password :HTMLInputElement)
-  {
-    const use = user.value;
-    const pass = password.value;
-    this.personasService.loginUser(use, pass);
-    this.router.navigate(['/lobby'])
-    
 
+  datauser: string = "";
+  datapass: string = "";
+
+  ingresar()
+  {
+    if (this.datauser === "mi.alarconr" && this.datapass == "1234") 
+      {
+        this.router.navigate(['/lobby']);
+      } 
+      else 
+      {
+        this.router.navigate(['/home']);
+      }
   }
+  
+
   recover() 
   {
     this.router.navigate(['/recover-pass']);

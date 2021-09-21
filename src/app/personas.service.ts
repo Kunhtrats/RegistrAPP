@@ -6,7 +6,12 @@ import { Persona } from './persona.model';
 })
 export class PersonasService {
 
-  private personas : Persona[] = [
+  private personas : Persona[] = 
+  [
+    {
+      user : "mi.alarconr",
+      password : "1234"
+    }
   ]
   getUser: any;
   constructor() { }

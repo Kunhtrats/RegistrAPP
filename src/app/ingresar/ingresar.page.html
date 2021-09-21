@@ -15,17 +15,17 @@
       <ion-col class="ion-align-self-center">
         <div>
           <ion-text color="primary" class="ion-text-center">
-            <h1>Datos de usuario</h1>
+            <h1>Datos de alumno</h1>
           </ion-text>
           <br><br>
           <ion-item lines="full" class="roundedInput">
             <ion-label position="floating">Usuario</ion-label>
-            <ion-input type="text" class="form-control" id="username" required #user></ion-input>
+            <ion-input type="text" [(ngModel)]="datauser" name="inputUser"></ion-input>
           </ion-item>
 
           <ion-item lines="full" class="roundedInput">
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input type="password" class="form-control" id="password" required #password></ion-input>
+            <ion-input type="password" [(ngModel)]="datapass" name="inputPass"></ion-input>
           </ion-item>
           <br><br>
           <br>
